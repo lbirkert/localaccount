@@ -1,5 +1,5 @@
-if(JSON.parse(localStorage.getItem("users") || "{}")[localStorage.getItem("user")] || false) 
-    window.location = "/dash.html";
+if(JSON.parse(localStorage.getItem("users") || "{}")[localStorage.getItem("user")] || false)
+    window.open("dash.html", "_self");
 
 const form = document.getElementById("form");
 

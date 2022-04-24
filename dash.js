@@ -6,7 +6,7 @@ let users = JSON.parse(localStorage.getItem("users") || "{}");
 let username = localStorage.getItem("user");
 let user = users[username] || false;
 
-if(!user) window.location = "/login.html";
+if(!user) window.open("login.html", "_self");
 
 data.innerHTML = `
     <h1>Welcome ${username}</h1>
@@ -15,12 +15,12 @@ data.innerHTML = `
 
 logout.addEventListener("click", function() {
     localStorage.removeItem("user");
-    window.location = "/login.html";
+    window.open("login.html", "_self");
 });
 
 delete_account.addEventListener("click", function() {
     delete users[username];
     localStorage.setItem("users", JSON.stringify(users));
     localStorage.removeItem("user");
-    window.location = "/login.html";
+    window.open("login.html", "_self");
 });
